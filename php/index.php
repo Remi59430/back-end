@@ -15,11 +15,14 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Navigation Bar -->
-            <div class="col-sm-4 col-xs-12">
+            <nav class="col-sm-4 col-xs-12">
+                <a href="index.php" class="list-group-item list-group-item-action">
+                    Home
+                </a>
                 <?php
-                    include("./includes/nav.inc.html");
+                    include("./includes/ul.inc.php");
                 ?>
-            </div>
+            </nav>
 
             <!-- Section -->
             <div class="col-sm-8 col-xs-12">
@@ -44,10 +47,16 @@
                         include("./pages/Supprimer.html");
                     }
 
+                    elseif(isset($_GET["add"])){
+                        include("./pages/add.html");
+                    }
+
                     else{
                 ?>
                         <div>
-                            <button type="button" class="btn btn-primary">Ajouter des données</button>
+                            <a href="index.php?add">
+                                <button type="button" class="btn btn-primary">Ajouter des données</button>
+                            </a>
                         </div>
                 <?php
                     }

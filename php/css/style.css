@@ -1,0 +1,49 @@
+/* -------------------------- debug -------------------------- */
+/* .container {box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.5) inset;} */
+/* body {box-shadow: -1px 1px 10px 3px red inset;} */
+/* header {box-shadow: -1px 1px 10px 3px yellow inset;} */
+/* section {box-shadow: -1px 1px 10px 3px blue inset;} */
+/* ----------------------------------------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 980px;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+header {
+    height: 250px;
+    background-image: url('../img/image.png');
+    background-position: center;
+    background-size: cover;
+}
+
+ul {
+    list-style: none;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+section {
+    padding: 15px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    padding: 15px;
+    text-align: center;
+}

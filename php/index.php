@@ -14,15 +14,16 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col col-md-2 col-sm-1">
-                <!-- Navigation Bar -->
+            <!-- Navigation Bar -->
+            <div class="col-sm-4 col-xs-12">
                 <?php
                     include("./includes/nav.inc.html");
                 ?>
+            </div>
 
-                <!-- Section -->
+            <!-- Section -->
+            <div class="col-sm-8 col-xs-12">
                 <?php
-
                     if(isset($_GET["Debogage"])){
                         include("./pages/Debogage.html");
                     }
@@ -44,22 +45,24 @@
                     }
 
                     else{
-                        ?>
-                            <button type="button" class="btn btn-primary">Ajouter une valeur</button>
-                        <?php
+                ?>
+                        <div>
+                            <button type="button" class="btn btn-primary">Ajouter des données</button>
+                        </div>
+                <?php
                     }
-
-                 ?>
-            </div>
+                ?>
+            </div>   
+         
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-        <!-- Footer -->
-        <?php
-            include("./includes/footer.inc.html");
-        ?>
+    
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+            <!-- Footer -->
+            <?php
+                include("./includes/footer.inc.html");
+            ?>
+            </div>
         </div>
     </div>
 

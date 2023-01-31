@@ -29,7 +29,12 @@
             <!-- Section -->
             <div class="col-sm-8 col-xs-12">
                 <?php
-                    if(isset($_POST[""])){
+                    if(isset($_POST["form"])){
+                        print_r($_POST);
+
+                        $table=["first_name","last_name","age","size","civility",];
+
+                        print_r($table);
 
                     }
 

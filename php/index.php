@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -30,37 +34,67 @@
             <div class="col-sm-8 col-xs-12">
                 <?php
                     if(isset($_POST["form"])){
-                        echo "<pre>";
-                        print_r($_POST);
-                        echo "</pre>";
 
                         $table=[];
                         $table['first_name'] = $_POST["first_name"];
                         $table['last_name'] = $_POST["last_name"];
                         $table['age'] = $_POST["age"];
-                        $table['size']  = $_POST["size"];
-                        $table['civility']  = $_POST["civility"];
+                        $table['size'] = $_POST["size"];
+                        $table['civility'] = $_POST["civility"];
 
                         echo "<pre>";
                         print_r($table);
                         echo "</pre>";
+                    
+                        $_SESSION["table"] = $table;
                     }
 
                     elseif(isset($_GET["Debogage"])){
+
                         echo '<h2 class="d-flex justify-content-center">Débogage</h2>';
                         echo '<h3 class="mt-4 mb-4">===>Lecture du tableau à l\'aide de la fonction print_r()</h3>';
+
+                        $table = $_SESSION["table"];
+                        
+                        echo "<pre>";
+                        print_r($table);
+                        echo "</pre>";
+                        
                     }
 
                     elseif(isset($_GET["Concatenation"])){
+
                         echo '<h2 class="d-flex justify-content-center">Concaténation</h2>';
+
+                        $table = $_SESSION["table"];
+                        $_POST["first_name"] = $table["first_name"]; 
+                        $_POST["last_name"] = $table["last_name"];
+                        $_POST["age"] = $table["age"];
+                        $_POST["size"] = $table["size"];
+
                         echo '<h3 class="mt-4 mb-4">===>Construction d\'une phrase avec le contenu du tableau</h3>';
+                        echo 'Mr ' .$_POST["first_name"] .' ' .$_POST["last_name"] ."<br>"; 
+                        echo 'J\'ai ' .$_POST["age"] .' ans et je mesure ' .$_POST["size"] .' m.';
+
                         echo '<h3 class="mt-4 mb-4">===>Construction d\'une phrase après MAJ du tableau</h3>';
+
                         echo '<h3 class="mt-4 mb-4">===>Affichage d\'une virgule à la place du point pour la taille</h3>';
+
+                        
+
                     }   
 
                     elseif(isset($_GET["Boucle"])){
+
                         echo '<h2 class="d-flex justify-content-center">Boucle</h2>';
+
+                        $table = $_SESSION['table'];
+                        
                         echo '<h3 class="mt-4 mb-4">===>Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
+
+                        // foreach(){
+
+                        // }
 
                     }
 

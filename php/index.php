@@ -30,12 +30,20 @@
             <div class="col-sm-8 col-xs-12">
                 <?php
                     if(isset($_POST["form"])){
+                        echo "<pre>";
                         print_r($_POST);
+                        echo "</pre>";
 
-                        $table=["first_name","last_name","age","size","civility",];
+                        $table=[];
+                        $table['first_name'] = $_POST["first_name"];
+                        $table['last_name'] = $_POST["last_name"];
+                        $table['age'] = $_POST["age"];
+                        $table['size']  = $_POST["size"];
+                        $table['civility']  = $_POST["civility"];
 
+                        echo "<pre>";
                         print_r($table);
-
+                        echo "</pre>";
                     }
 
                     elseif(isset($_GET["Debogage"])){

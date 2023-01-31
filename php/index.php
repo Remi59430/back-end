@@ -8,6 +8,7 @@
     ?>
 
     <body>
+
     <!-- Header -->
     <?php
         include("./includes/header.inc.html");
@@ -28,24 +29,35 @@
             <!-- Section -->
             <div class="col-sm-8 col-xs-12">
                 <?php
-                    if(isset($_GET["Debogage"])){
-                        include("./pages/Debogage.html");
+                    if(isset($_POST[""])){
+
+                    }
+
+                    elseif(isset($_GET["Debogage"])){
+                        echo '<h2 class="d-flex justify-content-center">Débogage</h2>';
+                        echo '<h3 class="mt-4 mb-4">===>Lecture du tableau à l\'aide de la fonction print_r()</h3>';
                     }
 
                     elseif(isset($_GET["Concatenation"])){
-                        include("./pages/Concatenation.html");
-                    }
+                        echo '<h2 class="d-flex justify-content-center">Concaténation</h2>';
+                        echo '<h3 class="mt-4 mb-4">===>Construction d\'une phrase avec le contenu du tableau</h3>';
+                        echo '<h3 class="mt-4 mb-4">===>Construction d\'une phrase après MAJ du tableau</h3>';
+                        echo '<h3 class="mt-4 mb-4">===>Affichage d\'une virgule à la place du point pour la taille</h3>';
+                    }   
 
                     elseif(isset($_GET["Boucle"])){
-                        include("./pages/Boucle.html");
+                        echo '<h2 class="d-flex justify-content-center">Boucle</h2>';
+                        echo '<h3 class="mt-4 mb-4">===>Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
+
                     }
 
                     elseif(isset($_GET["Fonction"])){
-                        include("./pages/Fonction.html");
+                        echo '<h2 class="d-flex justify-content-center">Fonction</h2>';
+                        echo '<h3 class="mt-4 mb-4">===>J\'utilise ma fonction readTable()</h3>';
                     }
 
                     elseif(isset($_GET["Supprimer"])){
-                        include("./pages/Supprimer.html");
+                        echo '<h2 class="d-flex justify-content-center">Supprimer</h2>';
                     }
 
                     elseif(isset($_GET["add"])){
@@ -74,6 +86,7 @@
             ?>
             </div>
         </div>
+
     </body>
 
 </html>

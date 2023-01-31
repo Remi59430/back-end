@@ -7,6 +7,7 @@
         include("./includes/head.inc.html");
     ?>
 
+    <body>
     <!-- Header -->
     <?php
         include("./includes/header.inc.html");
@@ -48,7 +49,8 @@
                     }
 
                     elseif(isset($_GET["add"])){
-                        include("./pages/add.html");
+                        echo '<h2 class="d-flex justify-content-center">Ajouter des données</h2>';
+                        include("./includes/form.inc.html");
                     }
 
                     else{
@@ -64,8 +66,9 @@
             </div>   
          
         </div>
-    
-        <div class="row">
+
+    </div>
+    <div class="row">
             <div class="col d-flex justify-content-center">
             <!-- Footer -->
             <?php
@@ -73,6 +76,6 @@
             ?>
             </div>
         </div>
-    </div>
+    </body>
 
 </html>
